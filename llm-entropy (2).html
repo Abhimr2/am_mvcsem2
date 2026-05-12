@@ -218,26 +218,26 @@
 
   <div class="model-cell">
     <div class="model-cell-header">
-      <input type="checkbox" id="en-mistral" checked>
-      <label for="en-mistral">Mistral Small 3.2</label>
+      <input type="checkbox" id="en-hermes" checked>
+      <label for="en-hermes">Hermes 3 405B</label>
     </div>
-    <div class="model-name">Mistral AI</div>
+    <div class="model-name">Nous Research</div>
   </div>
 
   <div class="model-cell">
     <div class="model-cell-header">
-      <input type="checkbox" id="en-qwen" checked>
-      <label for="en-qwen">Qwen 3 30B</label>
+      <input type="checkbox" id="en-gemma" checked>
+      <label for="en-gemma">Gemma 4 31B</label>
     </div>
-    <div class="model-name">Alibaba</div>
+    <div class="model-name">Google</div>
   </div>
 
   <div class="model-cell">
     <div class="model-cell-header">
-      <input type="checkbox" id="en-deepseek" checked>
-      <label for="en-deepseek">DeepSeek R1 70B</label>
+      <input type="checkbox" id="en-nvidia" checked>
+      <label for="en-nvidia">Nemotron Nano 30B</label>
     </div>
-    <div class="model-name">DeepSeek</div>
+    <div class="model-name">NVIDIA</div>
   </div>
 </div>
 
@@ -270,13 +270,13 @@ document.getElementById('maxtok').oninput = e =>
 
 const MODELS = {
   llama:    { label: 'Llama 3.3 70B',     sub: 'meta-llama/llama-3.3-70b-instruct:free',           model: 'meta-llama/llama-3.3-70b-instruct:free' },
-  mistral:  { label: 'Mistral Small 3.2', sub: 'mistralai/mistral-small-3.2-24b-instruct:free',    model: 'mistralai/mistral-small-3.2-24b-instruct:free' },
-  qwen:     { label: 'Qwen 3 30B',        sub: 'qwen/qwen3-30b-a3b:free',                          model: 'qwen/qwen3-30b-a3b:free' },
-  deepseek: { label: 'DeepSeek R1 70B',   sub: 'deepseek/deepseek-r1-distill-llama-70b:free',      model: 'deepseek/deepseek-r1-distill-llama-70b:free' },
+  hermes:   { label: 'Hermes 3 405B',     sub: 'nousresearch/hermes-3-llama-3.1-405b:free',         model: 'nousresearch/hermes-3-llama-3.1-405b:free' },
+  gemma:    { label: 'Gemma 4 31B',       sub: 'google/gemma-4-31b-it:free',                        model: 'google/gemma-4-31b-it:free' },
+  nvidia:   { label: 'Nemotron Nano 30B', sub: 'nvidia/nemotron-3-nano-30b-a3b:free',               model: 'nvidia/nemotron-3-nano-30b-a3b:free' },
 };
 
 function getEnabled() {
-  return ['llama','mistral','qwen','deepseek'].filter(id =>
+  return ['llama','hermes','gemma','nvidia'].filter(id =>
     document.getElementById('en-'+id).checked);
 }
 
